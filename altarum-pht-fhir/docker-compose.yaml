@@ -1,0 +1,52 @@
+services:
+  web:
+    image: "hapiproject/hapi:latest"
+    container_name: altarum-pht-fhir
+    ports:
+      - "8080:8080"
+    #configs:
+    #  - source: hapi
+    # target: /data/hapi/application.yaml
+
+    volumes:
+      #- hapi-data:/app/database
+      - type: bind
+        source: ./config
+        target: /app/config
+      - type: bind 
+        source: ./database
+        target: /app/database
+
+    environment:
+      #SPRING_CONFIG_LOCATION=file:/C/docker/altarum-pht-fhir/application.yaml
+      SPRING_CONFIG_LOCATION: file:/app/config/application.yaml
+      H2_OPTIONS: ifNotExist
+      HAPI.FHIR.FHIR_VERSION: R4
+      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.NAME: HL7.FHIR.US.CORE
+      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.VERSION: 6.1.0
+      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.RELOADEXISTING: TRUE
+      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.INSTALLMODE: STORE_AND_INSTALL
+      HAPI.FHIR.IG_RUNTIME_UPLOAD_ENABLED: TRUE
+      HAPI_FHIR_VALIDATION_REQUESTS_ENABLED: TRUE
+      HAPI_FHIR_SERVER_VALIDATION_FLAG_FAIL_ON_SEVERITY: ERROR
+      HAPI_FHIR_SERVER_VALIDATION_FLAG_ENFORCE_REQUIREMENT: TRUE
+      # enable $match
+      HAPI.FHIR.MDM_ENABLED: TRUE
+      HAPI.FHIR.SUBSCRIPTION.RESTHOOK_ENABLED: TRUE
+      HAPI.FHIR.MDM_RULES_JSON_LOCATION: file:/app/config/mdm-rules.json
+      HIBERNATE.SEARCH.ENABLED: TRUE
+      HIBERNATE.SEARCH.BACKEND.TYPE: LUCENE
+      HIBERNATE.SEARCH.BACKEND.DIRECTORY.ROOT: /app/config
+      HAPI.FHIR.LASTN_ENABLED: TRUE
+      HAPI.FHIR.ALLOW_EVERYTHING_OPERATION: FALSE
+      # BULK FHIR
+      HAPI.FHIR.BULKDATA.ENABLED: TRUE
+      HAPI.FHIR.BULK_EXPORT_ENABLED: TRUE
+      HAPI.FHIR.BULK_IMPORT_ENABLED: TRUE
+
+configs:
+  hapi:
+     external: true
+volumes:
+    hapi-data:
+        external: true
