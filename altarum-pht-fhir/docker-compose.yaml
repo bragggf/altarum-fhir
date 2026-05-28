@@ -9,10 +9,14 @@ services:
     # target: /data/hapi/application.yaml
 
     volumes:
-      #- hapi-data:/app/database
+    #  - hapi-data:/usr/local/tomcat/target/database
+    #  - hapi-data:/app/target/database
+     # - hapi-config:/app/config
       - type: bind
+     # - /home/bragggf/docker/altarum-pht-fhir/config:/app/config
         source: ./config
         target: /app/config
+      #- /home/bragggf/docker/altarum-pht-fhir/database:/app/database
       - type: bind 
         source: ./database
         target: /app/database
@@ -22,6 +26,7 @@ services:
       SPRING_CONFIG_LOCATION: file:/app/config/application.yaml
       H2_OPTIONS: ifNotExist
       HAPI.FHIR.FHIR_VERSION: R4
+      PARSER_ERROR_HANDLER: lenient
       HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.NAME: HL7.FHIR.US.CORE
       HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.VERSION: 6.1.0
       HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.RELOADEXISTING: TRUE

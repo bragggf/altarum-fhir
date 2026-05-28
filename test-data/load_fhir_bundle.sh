@@ -18,8 +18,8 @@ set -euo pipefail
 # --------------------------------------------------------------------------- #
 BUNDLE_FILE="${1:-}"
 FHIR_BASE_URL="${2:-${FHIR_BASE_URL:-http://localhost:8080/fhir}}"
-TIMEOUT=60          # seconds per request
-VERBOSE=false       # set to true for full curl output
+TIMEOUT=3600          # seconds per request
+VERBOSE=true       # set to true for full curl output
 
 # --------------------------------------------------------------------------- #
 # Colour helpers
@@ -68,7 +68,6 @@ echo -e "${BOLD}File             :${RESET} ${BUNDLE_FILE}"
 echo "-----------------------------------------------------------"
 
 CURL_OPTS=(
-  --silent
   --show-error
   --write-out "\n__HTTP_STATUS__%{http_code}"
   --request POST
@@ -82,7 +81,8 @@ CURL_OPTS=(
 $VERBOSE && CURL_OPTS+=(--verbose)
 
 RAW_RESPONSE=$(curl "${CURL_OPTS[@]}" 2>&1) || {
-  die "curl command failed. Is the server reachable at ${ENDPOINT}?"
+#  die "curl command failed. Is the server reachable at ${ENDPOINT}?"
+   echo "curl command failed"
 }
 
 # Split body and HTTP status code
