@@ -4,54 +4,70 @@ services:
     container_name: altarum-pht-fhir
     ports:
       - "8080:8080"
-    #configs:
-    #  - source: hapi
-    # target: /data/hapi/application.yaml
 
     volumes:
-    #  - hapi-data:/usr/local/tomcat/target/database
-    #  - hapi-data:/app/target/database
-     # - hapi-config:/app/config
       - type: bind
-     # - /home/bragggf/docker/altarum-pht-fhir/config:/app/config
         source: ./config
         target: /app/config
-      #- /home/bragggf/docker/altarum-pht-fhir/database:/app/database
-      - type: bind 
+      - type: bind
         source: ./database
         target: /app/database
 
     environment:
-      #SPRING_CONFIG_LOCATION=file:/C/docker/altarum-pht-fhir/application.yaml
+      # ── Spring config location ─────────────────────────────────────────────
+      # Load application.yaml from the bind-mounted config folder.
+      # This takes priority over the WAR-internal copy.
       SPRING_CONFIG_LOCATION: file:/app/config/application.yaml
+
+      # ── Database ───────────────────────────────────────────────────────────
       H2_OPTIONS: ifNotExist
-      HAPI.FHIR.FHIR_VERSION: R4
-      PARSER_ERROR_HANDLER: lenient
-      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.NAME: HL7.FHIR.US.CORE
-      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.VERSION: 6.1.0
-      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.RELOADEXISTING: TRUE
-      HAPI.FHIR.IMPLEMENTATIONGUIDES.US-CORE.INSTALLMODE: STORE_AND_INSTALL
-      HAPI.FHIR.IG_RUNTIME_UPLOAD_ENABLED: TRUE
-      HAPI_FHIR_VALIDATION_REQUESTS_ENABLED: TRUE
-      HAPI_FHIR_SERVER_VALIDATION_FLAG_FAIL_ON_SEVERITY: ERROR
-      HAPI_FHIR_SERVER_VALIDATION_FLAG_ENFORCE_REQUIREMENT: TRUE
-      # enable $match
-      HAPI.FHIR.MDM_ENABLED: TRUE
-      HAPI.FHIR.SUBSCRIPTION.RESTHOOK_ENABLED: TRUE
-      HAPI.FHIR.MDM_RULES_JSON_LOCATION: file:/app/config/mdm-rules.json
-      HIBERNATE.SEARCH.ENABLED: TRUE
-      HIBERNATE.SEARCH.BACKEND.TYPE: LUCENE
-      HIBERNATE.SEARCH.BACKEND.DIRECTORY.ROOT: /app/config
-      HAPI.FHIR.LASTN_ENABLED: TRUE
-      HAPI.FHIR.ALLOW_EVERYTHING_OPERATION: FALSE
-      # BULK FHIR
-      HAPI.FHIR.BULKDATA.ENABLED: TRUE
-      HAPI.FHIR.BULK_EXPORT_ENABLED: TRUE
-      HAPI.FHIR.BULK_IMPORT_ENABLED: TRUE
+
+      # ── HAPI core settings ─────────────────────────────────────────────────
+      # NOTE: Spring Boot env var binding requires UNDERSCORES not DOTS.
+      # HAPI.FHIR.xxx style does NOT bind correctly — use HAPI_FHIR_xxx.
+      HAPI_FHIR_FHIR_VERSION: R4
+      HAPI_FHIR_PARSER_ERROR_HANDLER: lenient
+
+      # ── Validation ─────────────────────────────────────────────────────────
+      # REMOVED: HAPI_FHIR_SERVER_VALIDATION_FLAG_FAIL_ON_SEVERITY: ERROR
+      #   This was overriding application.yaml and forcing 422 on ALL
+      #   error-severity issues including profile-not-found and LOINC
+      #   answer list warnings. Validation severity is now controlled
+      #   entirely by application.yaml best_practice_warning_level: IGNORE
+      #   and logical_urls settings.
+      #
+      # REMOVED: HAPI_FHIR_SERVER_VALIDATION_FLAG_ENFORCE_REQUIREMENT: TRUE
+      #   This was overriding best_practice_warning_level: IGNORE.
+      HAPI_FHIR_VALIDATION_REQUESTS_ENABLED: "true"
+
+      # ── Implementation Guides ──────────────────────────────────────────────
+      # NOTE: IG install is configured in application.yaml implementationguides
+      # block which is more reliable than env vars for multi-value config.
+      # The env var form below is kept as a fallback with correct underscore
+      # format but application.yaml takes precedence.
+      HAPI_FHIR_IG_RUNTIME_UPLOAD_ENABLED: "true"
+
+      # ── Features ───────────────────────────────────────────────────────────
+      HAPI_FHIR_MDM_ENABLED: "true"
+      HAPI_FHIR_MDM_RULES_JSON_LOCATION: file:/app/config/mdm-rules.json
+      HAPI_FHIR_SUBSCRIPTION_RESTHOOK_ENABLED: "true"
+      HAPI_FHIR_LASTN_ENABLED: "true"
+      HAPI_FHIR_ALLOW_EVERYTHING_OPERATION: "false"
+
+      # ── Bulk FHIR ──────────────────────────────────────────────────────────
+      HAPI_FHIR_BULKDATA_ENABLED: "true"
+      HAPI_FHIR_BULK_EXPORT_ENABLED: "true"
+      HAPI_FHIR_BULK_IMPORT_ENABLED: "true"
+
+      # ── Hibernate Search ───────────────────────────────────────────────────
+      HIBERNATE_SEARCH_ENABLED: "true"
+      HIBERNATE_SEARCH_BACKEND_TYPE: LUCENE
+      HIBERNATE_SEARCH_BACKEND_DIRECTORY_ROOT: /app/config
 
 configs:
   hapi:
-     external: true
+    external: true
+
 volumes:
-    hapi-data:
-        external: true
+  hapi-data:
+    external: true

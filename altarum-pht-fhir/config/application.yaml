@@ -116,7 +116,7 @@ spring:
   jpa:
     properties:
       hibernate:
-        # redundant?  see search settings 
+        # redundant?  see search settings
         hibernate.search.enabled: true
         format_sql: false
         show_sql: false
@@ -142,7 +142,7 @@ spring:
         search:
         #  schema_management:
           strategy: CREATE
-          # XXGFB likley redundant, same as hibernate.search.enabled: true 
+          # XXGFB likley redundant, same as hibernate.search.enabled: true
           enabled: true
           # Lucene backend (default example)
           backend:
@@ -186,20 +186,49 @@ hapi:
     openapi_enabled: true                       # Swagger UI at /fhir/swagger-ui/index.html; API docs at /fhir/api-docs
     fhir_version: R4                            # DSTU2 | DSTU3 | R4 | R5
     parser_error_handler: lenient
+    client_id_strategy: ANY   # allows a put for transction bundle
+    enforce_referential_integrity_on_write: false 
+    enforce_referential_integrity_on_delete: false
     # use_apache_address_strategy: false
     # use_apache_address_strategy_https: false
     # custom_content_path: ./custom               # folder name must be 'custom'
     # app_content_path: ./configs/app            # served under /web/app
     # server_address: http://hapi.fhir.org/baseR4
     # defer_indexing_for_codesystems_of_size: 101
+    #
+    validation:
+      requests_enabled: true
+      best_practice_warning_level: IGNORE
+    terminology_validation_enabled: true
+    allow_external_references: true
 
     # -------------------------------------------------------------------------------
     # B. Implementation Guides (IG) & Package Install
     # -------------------------------------------------------------------------------
     ig_runtime_upload_enabled: true
     # validate_resource_status_for_package_upload: false   # default true
-    # install_transitive_ig_dependencies: true
-    # implementationguides:
+    install_transitive_ig_dependencies: true
+    implementationguides:
+      us_core_610:
+        name: hl7.fhir.us.core
+        version: 6.1.0
+        reloadExisting: false
+        installMode: STORE_AND_INSTALL
+      us_core_311:
+        name: hl7.fhir.us.core
+        version: 3.1.1
+        reloadExisting: false
+        installMode: STORE_AND_INSTALL
+    # mcode:  # DISABLED - package not available on registry
+    # name: hl7.fhir.us.mcode
+    # version: 3.0.0
+    # reloadExisting: false
+    # installMode: STORE_AND_INSTALL
+    # genomics_reporting:  # DISABLED - not needed for race/ethnicity fix
+    # name: hl7.fhir.uv.genomics-reporting
+    # version: 2.0.0
+    # reloadExisting: false
+    # installMode: STORE_AND_INSTALL
     #   swiss:
     #     name: swiss.mednet.fhir
     #     version: 0.8.0
@@ -335,8 +364,10 @@ hapi:
     # -------------------------------------------------------------------------------
     narrative_enabled: false
     # validation:
-    #   requests_enabled: true
-    #   responses_enabled: true
+    #    requests_enabled: true
+    best_practice_warning_level: IGNORE
+    #    responses_enabled: true
+    #
 
     # -------------------------------------------------------------------------------
     # H. MDM (Master Data Management)
@@ -348,20 +379,59 @@ hapi:
     # -------------------------------------------------------------------------------
     # I. Terminology / ValueSet Expansion
     # -------------------------------------------------------------------------------
-    # pre_expand_value_sets: true
-    # enable_task_pre_expand_value_sets: true
-    # pre_expand_value_sets_default_count: 1000
-    # pre_expand_value_sets_max_count: 1000
-    # maximum_expansion_size: 1000
+    defer_indexing_for_codesystems_of_size: 0 # expand all CodeSystems immediately
+    schedule_subscription_triggering: false  # do not schedule in background run immediately.
+    pre_expand_value_sets: false  # disabled: prevents stale FAILED_TO_EXPAND
+    enable_task_pre_expand_value_sets: false  # disabled: prevents stale FAILED_TO_EXPAND
+    pre_expand_value_sets_default_count: 10000
+    pre_expand_value_sets_max_count: 10000
+    maximum_expansion_size: 10000
     logical_urls:
-      - http://terminology.hl7.org/*
-      - https://terminology.hl7.org/*
+      # - http://terminology.hl7.org/*  # removed: must be resolvable
+      # - https://terminology.hl7.org/*  # removed: must be resolvable
       - http://snomed.info/*
       - https://snomed.info/*
       - http://unitsofmeasure.org/*
       - https://unitsofmeasure.org/*
       - http://loinc.org/*
       - https://loinc.org/*
+      - http://loinc.org/vs/*
+      - https://loinc.org/vs/*
+      - http://varnomen.hgvs.org/*
+      - https://varnomen.hgvs.org/*
+      - http://terminology.hl7.org/CodeSystem/v2-0487
+      - http://terminology.hl7.org/CodeSystem/v3-ActCode
+      - http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
+      - http://hl7.org/fhir/us/bfdr/*
+      - https://hl7.org/fhir/us/bfdr/*
+      - http://hl7.org/fhir/us/vr-common-library/*
+      - https://hl7.org/fhir/us/vr-common-library/*
+      - http://hl7.org/fhir/us/central-cancer-registry-reporting/*
+      - http://hl7.org/fhir/us/ecr/*
+      - https://hl7.org/fhir/us/core/*
+      - https://build.fhir.org/ig/*
+      - http://www.sequenceontology.org/*
+      - https://www.sequenceontology.org/*
+      - http://www.genenames.org/*
+      - http://www.ncbi.nlm.nih.gov/*
+      - https://api.ncbi.nlm.nih.gov/*
+      - http://clinicaltrials.gov/*
+      - https://clinicaltrials.gov/*
+      - https://nahdo.org/*
+      - https://www.ncpdp.org/*
+      - https://phinvads.cdc.gov/*
+      - http://cts.nlm.nih.gov/*
+      - https://diseaseanddrug.com/*
+      - https://hl7.org/fhir/codesystem/*
+      - http://hl7.org/fhir/us/mcode/*
+      - https://hl7.org/fhir/us/mcode/*
+      - http://www.nlm.nih.gov/research/umls/rxnorm
+      - https://www.nlm.nih.gov/research/umls/rxnorm
+      - http://hl7.org/fhir/sid/icd-10-cm
+      - http://hl7.org/fhir/sid/icd-10
+      - http://www.ama-assn.org/go/cpt
+      - http://nucc.org/provider-taxonomy
+      - http://terminology.hl7.org/CodeSystem/v2-0203
 
     # -------------------------------------------------------------------------------
     # J. Partitioning & Multitenancy
@@ -464,16 +534,16 @@ hapi:
     # -------------------------------------------------------------------------------
     # P. Remote Terminology Service (disabled by default)
     # -------------------------------------------------------------------------------
-    # remote_terminology_service:
-    #   all:
-    #     system: "*"
-    #     url: "https://tx.fhir.org/r4/"
-    #   snomed:
-    #     system: "http://snomed.info/sct"
-    #     url: "https://tx.fhir.org/r4/"
-    #   loinc:
-    #     system: "http://loinc.org"
-    #     url: "https://hapi.fhir.org/baseR4/"
+    remote_terminology_service:
+      all:
+        system: "*"
+        url: "https://tx.fhir.org/r4/"
+      snomed:
+        system: "http://snomed.info/sct"
+        url: "https://tx.fhir.org/r4/"
+      loinc:
+        system: "http://loinc.org"
+        url: "https://tx.fhir.org/r4/"
 
     # -------------------------------------------------------------------------------
     # Q. Subscriptions (disabled by default)
@@ -508,3 +578,4 @@ hapi:
         server_address: 'http://localhost:8080/fhir'
         refuse_to_fetch_third_party_urls: false
         fhir_version: R4
+
