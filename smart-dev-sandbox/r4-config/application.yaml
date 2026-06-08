@@ -234,6 +234,11 @@ hapi:
         version: 3.1.1
         reloadExisting: false
         installMode: STORE_AND_INSTALL
+      mcode: # required for NACCR cancer data
+        name: hl7.fhir.us.mcode
+        version: 3.0.0
+        reloadExisting: false
+        installMode: STORE_AND_INSTALL
     # mcode:  # DISABLED - package not available on registry
     # name: hl7.fhir.us.mcode
     # version: 3.0.0
