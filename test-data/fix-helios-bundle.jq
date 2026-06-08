@@ -257,3 +257,40 @@ walk(
     (if has("extension") and .extension == null then del(.extension) else . end)
   else . end
 )
+|
+
+# Fix 27: Claim.priority coding missing system
+.entry |= map(
+  if .resource.resourceType == "Claim" and
+     (.resource.priority.coding | type) == "array" then
+    .resource.priority.coding |= map(
+      if .system == null then
+        . + {"system": "http://terminology.hl7.org/CodeSystem/processpriority"}
+      else . end)
+  else . end
+) |
+
+# Fix 28: Remove Coding objects with JSON null code (not string "null")
+walk(
+  if type == "array" then
+    map(select(
+      type != "object" or
+      has("value") or
+      .code != null or
+      (has("system") | not)
+    ))
+  else . end
+) |
+
+# Fix 29: Remove patient-birthTime extensions with no value field at all
+.entry |= map(
+  if .resource != null and (.resource.extension | type) == "array" then
+    .resource.extension |= map(select(
+      type != "object" or
+      (.url? | strings | contains("patient-birthTime") | not) or
+      (keys | map(select(. != "url")) | length > 0)
+    ))
+  else . end
+)
+
+
