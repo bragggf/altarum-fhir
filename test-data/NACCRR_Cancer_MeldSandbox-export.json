@@ -1,0 +1,4675 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "C22.0",
+              "display": "Liver cell carcinoma"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "69842003",
+                "display": "Structure of left lobe of liver (body structure)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "onsetDateTime": "2025-10-31",
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008",
+                  "code": "1222837003",
+                  "display": "American Joint Committee on Cancer stage IV (qualifier value)"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "6",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61977001",
+              "display": "Chronic type B viral hepatitis"
+            }
+          ],
+          "text": "Chronic type B viral hepatitis"
+        },
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "onsetDateTime": "2017",
+        "recordedDate": "2025-06-20"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "62",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: malignant neoplasm of breast (active).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-histology-morphology-behavior.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                  "code": "8500/3",
+                  "display": "Infiltrating duct carcinoma, NOS"
+                }
+              ],
+              "text": "Infiltrating duct carcinoma, NOS"
+            }
+          },
+          {
+            "url": "https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-cancer-status-evidence-type.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "714797009"
+                }
+              ],
+              "text": "Histologic test (procedure)"
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast"
+            }
+          ],
+          "text": "Malignant neoplasm of breast"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76752008",
+                "display": "Breast"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "onsetDateTime": "2025-10-02T14:00:00-06:00",
+        "recordedDate": "2025-10-02T14:00:00-06:00"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/62"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "63",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Diabetes mellitus type 2 (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "onsetDateTime": "2020-01-15T09:00:00-06:00",
+        "recordedDate": "2021-06-01T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/55"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/63"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "64",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Hypertensive disorder, systemic arterial (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
+            }
+          ],
+          "text": "Hypertensive disorder, systemic arterial"
+        },
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "onsetDateTime": "2018-06-01T09:00:00-06:00",
+        "recordedDate": "2019-02-02T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/56"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/64"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "61",
+        "meta": {
+          "versionId": "2",
+          "lastUpdated": "2026-01-12T19:57:45.000+00:00",
+          "source": "#0N4fn1Wp6KOeXhoJ",
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "C22.0",
+              "display": "Liver cell carcinoma"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "69842003",
+                "display": "Structure of left lobe of liver (body structure)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "onsetDateTime": "2025-10-31",
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008",
+                  "code": "1222837003",
+                  "display": "American Joint Committee on Cancer stage IV (qualifier value)"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/61"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "111",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: malignant neoplasm of prostate (active).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-histology-morphology-behavior.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                  "code": "8140/3",
+                  "display": "Adenocarcinoma, NOS"
+                }
+              ],
+              "text": "Adenocarcinoma, NOS"
+            }
+          },
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-laterality-qualifier.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "399488007",
+                  "display": "Midline (qualifier value)"
+                }
+              ],
+              "text": "Midline (qualifier value)"
+            }
+          },
+          {
+            "url": "https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-cancer-status-evidence-type.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "714797009"
+                }
+              ],
+              "text": "Histologic test (procedure)"
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399068003",
+              "display": "Malignant neoplasm of prostate"
+            }
+          ],
+          "text": "Malignant neoplasm of prostate"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "41216001",
+                "display": "Prostate"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "onsetDateTime": "2025-11-03T09:00:00-06:00",
+        "recordedDate": "2025-11-03T08:00:00-06:00"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/111"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "112",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: malignant neoplasm of breast (active).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-histology-morphology-behavior.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                  "code": "8500/3",
+                  "display": "Infiltrating duct carcinoma, NOS"
+                }
+              ],
+              "text": "Infiltrating duct carcinoma, NOS"
+            }
+          },
+          {
+            "url": "https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-cancer-status-evidence-type.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "714797009"
+                }
+              ],
+              "text": "Histologic test (procedure)"
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast"
+            }
+          ],
+          "text": "Malignant neoplasm of breast"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76752008",
+                "display": "Breast"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "onsetDateTime": "2025-10-02T14:00:00-06:00",
+        "recordedDate": "2025-10-02T14:00:00-06:00"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/112"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "113",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Diabetes mellitus type 2 (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "onsetDateTime": "2020-01-15T09:00:00-06:00",
+        "recordedDate": "2021-06-01T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/105"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/113"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "114",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Hypertensive disorder, systemic arterial (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
+            }
+          ],
+          "text": "Hypertensive disorder, systemic arterial"
+        },
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "onsetDateTime": "2018-06-01T09:00:00-06:00",
+        "recordedDate": "2019-02-02T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/106"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/114"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "161",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: malignant neoplasm of prostate (active).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-histology-morphology-behavior.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                  "code": "8140/3",
+                  "display": "Adenocarcinoma, NOS"
+                }
+              ],
+              "text": "Adenocarcinoma, NOS"
+            }
+          },
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-laterality-qualifier.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "399488007",
+                  "display": "Midline (qualifier value)"
+                }
+              ],
+              "text": "Midline (qualifier value)"
+            }
+          },
+          {
+            "url": "https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-cancer-status-evidence-type.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "714797009"
+                }
+              ],
+              "text": "Histologic test (procedure)"
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399068003",
+              "display": "Malignant neoplasm of prostate"
+            }
+          ],
+          "text": "Malignant neoplasm of prostate"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "41216001",
+                "display": "Prostate"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "onsetDateTime": "2025-11-03T09:00:00-06:00",
+        "recordedDate": "2025-11-03T08:00:00-06:00"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/161"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "162",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: malignant neoplasm of breast (active).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "https://hl7.org/fhir/us/mcode/STU4/StructureDefinition-mcode-histology-morphology-behavior.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+                  "code": "8500/3",
+                  "display": "Infiltrating duct carcinoma, NOS"
+                }
+              ],
+              "text": "Infiltrating duct carcinoma, NOS"
+            }
+          },
+          {
+            "url": "https://build.fhir.org/ig/HL7/fhir-central-cancer-registry-reporting-ig/StructureDefinition-cancer-status-evidence-type.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "714797009"
+                }
+              ],
+              "text": "Histologic test (procedure)"
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast"
+            }
+          ],
+          "text": "Malignant neoplasm of breast"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76752008",
+                "display": "Breast"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "onsetDateTime": "2025-10-02T14:00:00-06:00",
+        "recordedDate": "2025-10-02T14:00:00-06:00"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/162"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "163",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Diabetes mellitus type 2 (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Diabetes mellitus type 2"
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "onsetDateTime": "2020-01-15T09:00:00-06:00",
+        "recordedDate": "2021-06-01T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/155"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/163"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "164",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem list condition: Hypertensive disorder, systemic arterial (active).</p></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
+            }
+          ],
+          "text": "Hypertensive disorder, systemic arterial"
+        },
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "onsetDateTime": "2018-06-01T09:00:00-06:00",
+        "recordedDate": "2019-02-02T09:00:00-06:00",
+        "asserter": {
+          "reference": "PractitionerRole/156"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/164"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "4",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99213"
+              }
+            ],
+            "text": "Office Visit"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "period": {
+          "start": "2025-10-31"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "7",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99213"
+              }
+            ],
+            "text": "Office Visit"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "period": {
+          "start": "2024-06-20"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/7"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "59",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for prostate cancer evaluation.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/55"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-11-20T09:00:00-06:00",
+          "end": "2025-11-20T10:00:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of prostate cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/61"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/59"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "60",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for breast cancer treatment planning.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/56"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-10-21T10:30:00-06:00",
+          "end": "2025-10-21T11:30:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of breast cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/62"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/60"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "109",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for prostate cancer evaluation.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/105"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-11-20T09:00:00-06:00",
+          "end": "2025-11-20T10:00:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of prostate cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/111"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/109"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "110",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for breast cancer treatment planning.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/106"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-10-21T10:30:00-06:00",
+          "end": "2025-10-21T11:30:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of breast cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/112"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/110"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "159",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for prostate cancer evaluation.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/155"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-11-20T09:00:00-06:00",
+          "end": "2025-11-20T10:00:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of prostate cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/161"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/159"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "160",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Encounter: outpatient oncology visit for breast cancer treatment planning.</p></div>"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "PractitionerRole/156"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-10-21T10:30:00-06:00",
+          "end": "2025-10-21T11:30:00-06:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation and management of breast cancer"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/162"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/160"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "69",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single leuprolide dose administered for prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "leuprolide"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "context": {
+          "reference": "Encounter/59"
+        },
+        "effectiveDateTime": "2025-11-28T10:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/55"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "399068003",
+                "display": "Malignant neoplasm of prostate (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of prostate (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/61"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/67"
+        },
+        "dosage": {
+          "text": "leuprolide 7.5 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "78421000"
+              }
+            ]
+          },
+          "dose": {
+            "value": 7.5,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/69"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "70",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single docetaxel infusion administered for breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "context": {
+          "reference": "Encounter/60"
+        },
+        "effectiveDateTime": "2025-10-24T15:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/56"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254837009",
+                "display": "Malignant neoplasm of breast (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of breast (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/62"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/68"
+        },
+        "dosage": {
+          "text": "docetaxel 20 MG/ML Injectable Solution 75 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008"
+              }
+            ]
+          },
+          "dose": {
+            "value": 75,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/70"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "119",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single leuprolide dose administered for prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "leuprolide"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "context": {
+          "reference": "Encounter/109"
+        },
+        "effectiveDateTime": "2025-11-28T10:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/105"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "399068003",
+                "display": "Malignant neoplasm of prostate (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of prostate (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/111"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/117"
+        },
+        "dosage": {
+          "text": "leuprolide 7.5 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "78421000"
+              }
+            ]
+          },
+          "dose": {
+            "value": 7.5,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/119"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "120",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single docetaxel infusion administered for breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "context": {
+          "reference": "Encounter/110"
+        },
+        "effectiveDateTime": "2025-10-24T15:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/106"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254837009",
+                "display": "Malignant neoplasm of breast (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of breast (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/112"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/118"
+        },
+        "dosage": {
+          "text": "docetaxel 20 MG/ML Injectable Solution 75 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008"
+              }
+            ]
+          },
+          "dose": {
+            "value": 75,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/120"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "169",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single leuprolide dose administered for prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "leuprolide"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "context": {
+          "reference": "Encounter/159"
+        },
+        "effectiveDateTime": "2025-11-28T10:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/155"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "399068003",
+                "display": "Malignant neoplasm of prostate (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of prostate (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/161"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/167"
+        },
+        "dosage": {
+          "text": "leuprolide 7.5 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "78421000"
+              }
+            ]
+          },
+          "dose": {
+            "value": 7.5,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/169"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "170",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationAdministration: single docetaxel infusion administered for breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "context": {
+          "reference": "Encounter/160"
+        },
+        "effectiveDateTime": "2025-10-24T15:00:00-06:00",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/156"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254837009",
+                "display": "Malignant neoplasm of breast (disorder)"
+              }
+            ],
+            "text": "Malignant neoplasm of breast (disorder)"
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/162"
+          }
+        ],
+        "request": {
+          "reference": "MedicationRequest/168"
+        },
+        "dosage": {
+          "text": "docetaxel 20 MG/ML Injectable Solution 75 mg once.",
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008"
+              }
+            ]
+          },
+          "dose": {
+            "value": 75,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationAdministration/170"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "65",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: metformin extended release for diabetes management.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Metformin ER 500 mg"
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "encounter": {
+          "reference": "Encounter/59"
+        },
+        "authoredOn": "2025-11-15T11:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/55"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily with evening meal.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/65"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "66",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: lisinopril for hypertension.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "29046",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "lisinopril"
+        },
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "encounter": {
+          "reference": "Encounter/60"
+        },
+        "authoredOn": "2025-10-22T09:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/56"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/66"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "67",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: leuprolide for prostate cancer therapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "encounter": {
+          "reference": "Encounter/59"
+        },
+        "authoredOn": "2025-11-13T08:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/55"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/61"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/67"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "68",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: docetaxel for breast cancer chemotherapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "encounter": {
+          "reference": "Encounter/60"
+        },
+        "authoredOn": "2025-10-14T14:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/56"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/62"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/68"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "115",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: metformin extended release for diabetes management.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Metformin ER 500 mg"
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "encounter": {
+          "reference": "Encounter/109"
+        },
+        "authoredOn": "2025-11-15T11:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/105"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily with evening meal.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/115"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "116",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: lisinopril for hypertension.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "29046",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "lisinopril"
+        },
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "encounter": {
+          "reference": "Encounter/110"
+        },
+        "authoredOn": "2025-10-22T09:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/106"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/116"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "117",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: leuprolide for prostate cancer therapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "encounter": {
+          "reference": "Encounter/109"
+        },
+        "authoredOn": "2025-11-13T08:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/105"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/111"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/117"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "118",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: docetaxel for breast cancer chemotherapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "encounter": {
+          "reference": "Encounter/110"
+        },
+        "authoredOn": "2025-10-14T14:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/106"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/112"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/118"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "165",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: metformin extended release for diabetes management.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Metformin ER 500 mg"
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "encounter": {
+          "reference": "Encounter/159"
+        },
+        "authoredOn": "2025-11-15T11:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/155"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily with evening meal.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/165"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "166",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: lisinopril for hypertension.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "29046",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "lisinopril"
+        },
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "encounter": {
+          "reference": "Encounter/160"
+        },
+        "authoredOn": "2025-10-22T09:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/156"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 1 tablet by mouth daily.",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/166"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "167",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: leuprolide for prostate cancer therapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "42375",
+              "display": "lisinopril"
+            }
+          ],
+          "text": "leuprolide"
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "encounter": {
+          "reference": "Encounter/159"
+        },
+        "authoredOn": "2025-11-13T08:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/155"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/161"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/167"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "168",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationRequest: docetaxel for breast cancer chemotherapy.</p></div>"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1001405",
+              "display": "docetaxel 20 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "docetaxel 20 MG/ML Injectable Solution"
+        },
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "encounter": {
+          "reference": "Encounter/160"
+        },
+        "authoredOn": "2025-10-14T14:00:00-06:00",
+        "requester": {
+          "reference": "PractitionerRole/156"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/162"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/168"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "73",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Observation: Prostate specific Ag panel - Serum or Plasma.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "53764-7",
+              "display": "Prostate specific Ag panel - Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "encounter": {
+          "reference": "Encounter/59"
+        },
+        "effectiveDateTime": "2025-11-20T09:30:00-06:00",
+        "performer": [
+          {
+            "reference": "PractitionerRole/55"
+          }
+        ],
+        "valueString": "Panel performed.",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/73"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "123",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Observation: Prostate specific Ag panel - Serum or Plasma.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "53764-7",
+              "display": "Prostate specific Ag panel - Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "encounter": {
+          "reference": "Encounter/109"
+        },
+        "effectiveDateTime": "2025-11-20T09:30:00-06:00",
+        "performer": [
+          {
+            "reference": "PractitionerRole/105"
+          }
+        ],
+        "valueString": "Panel performed.",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/123"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "173",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Observation: Prostate specific Ag panel - Serum or Plasma.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "53764-7",
+              "display": "Prostate specific Ag panel - Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "encounter": {
+          "reference": "Encounter/159"
+        },
+        "effectiveDateTime": "2025-11-20T09:30:00-06:00",
+        "performer": [
+          {
+            "reference": "PractitionerRole/155"
+          }
+        ],
+        "valueString": "Panel performed.",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/173"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "52",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization: Lakeshore Oncology &amp; Hematology (active).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "6166943327"
+          }
+        ],
+        "active": true,
+        "name": "Lakeshore Oncology and Hematology"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/52"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "102",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization: Lakeshore Oncology &amp; Hematology (active).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "6166943327"
+          }
+        ],
+        "active": true,
+        "name": "Lakeshore Oncology and Hematology"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/102"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "152",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Organization: Lakeshore Oncology &amp; Hematology (active).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "6166943327"
+          }
+        ],
+        "active": true,
+        "name": "Lakeshore Oncology and Hematology"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/152"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Mickey <b>Mouse </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>TCGA-DD-A1EH</td></tr><tr><td>Address</td><td><span>183 Mountain View St </span><br/><span>Greenville </span><span>SC </span><span>US </span></td></tr><tr><td>Date of birth</td><td><span>14 April 1998</span></td></tr></tbody></table></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2135-2",
+                  "display": "Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Hispanic or Latino"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical record number"
+                }
+              ]
+            },
+            "system": "http:/test.com",
+            "value": "Patient1234"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Mouse",
+            "given": [
+              "Mickey"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1998-04-14",
+        "address": [
+          {
+            "line": [
+              "183 Mountain View St"
+            ],
+            "city": "Greenville",
+            "state": "SC",
+            "postalCode": "29605",
+            "country": "US"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "57",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Ethan Brooks (male).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "WI",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-31001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Brooks",
+            "given": [
+              "Ethan"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-01-18",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "4100 N Sheridan Rd"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60613",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/55"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/57"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "58",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Alicia Reynolds (female).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2054-5",
+                  "display": "Black or African American"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Black or African American"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "IL",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-32001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Reynolds",
+            "given": [
+              "Alicia"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-05-03",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "700 E 55th St"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60637",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/56"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/58"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "107",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Ethan Brooks (male).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "WI",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-31001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Brooks",
+            "given": [
+              "Ethan"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-01-18",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "4100 N Sheridan Rd"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60613",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/105"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/107"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "108",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Alicia Reynolds (female).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2054-5",
+                  "display": "Black or African American"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Black or African American"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "IL",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-32001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Reynolds",
+            "given": [
+              "Alicia"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-05-03",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "700 E 55th St"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60637",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/106"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/108"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "157",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Ethan Brooks (male).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "WI",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-31001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Brooks",
+            "given": [
+              "Ethan"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-01-18",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "4100 N Sheridan Rd"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60613",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/155"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/157"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "158",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient: Alicia Reynolds (female).</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2054-5",
+                  "display": "Black or African American"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Black or African American"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-birthPlace.html",
+            "valueAddress": {
+              "state": "IL",
+              "country": "US"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "MRN-32001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Reynolds",
+            "given": [
+              "Alicia"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-05-03",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "700 E 55th St"
+            ],
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60637",
+            "country": "US"
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "PractitionerRole/156"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/158"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "3",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9941339100"
+          }
+        ],
+        "name": [
+          {
+            "family": "Oncologist",
+            "given": [
+              "Owen"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "line": [
+              "123 Corporate Drive"
+            ],
+            "city": "Anytown",
+            "state": "MA",
+            "postalCode": "12345",
+            "country": "US"
+          }
+        ],
+        "gender": "male",
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0360",
+                  "version": "2.7",
+                  "code": "MD"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "53",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Taylor Nguyen (NPI 4898302607).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "4898302607"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Nguyen",
+            "given": [
+              "Taylor"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/53"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "54",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Jordan Patel (NPI 1791577954).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1791577954"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Patel",
+            "given": [
+              "Jordan"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/54"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "103",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Taylor Nguyen (NPI 4898302607).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "4898302607"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Nguyen",
+            "given": [
+              "Taylor"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/103"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "104",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Jordan Patel (NPI 1791577954).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1791577954"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Patel",
+            "given": [
+              "Jordan"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/104"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "153",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Taylor Nguyen (NPI 4898302607).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "4898302607"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Nguyen",
+            "given": [
+              "Taylor"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/153"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "154",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Practitioner: Dr. Jordan Patel (NPI 1791577954).</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1791577954"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Patel",
+            "given": [
+              "Jordan"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/154"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "55",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Hematology &amp; Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/53"
+        },
+        "organization": {
+          "reference": "Organization/52"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RH0003X",
+                "display": "Hematology & Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0111",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "taylor.nguyen@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/55"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "56",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Medical Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/54"
+        },
+        "organization": {
+          "reference": "Organization/52"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RX0202X",
+                "display": "Medical Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0112",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "jordan.patel@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/56"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "105",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Hematology &amp; Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/103"
+        },
+        "organization": {
+          "reference": "Organization/102"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RH0003X",
+                "display": "Hematology & Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0111",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "taylor.nguyen@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/105"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "106",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Medical Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/104"
+        },
+        "organization": {
+          "reference": "Organization/102"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RX0202X",
+                "display": "Medical Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0112",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "jordan.patel@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/106"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "155",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Hematology &amp; Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/153"
+        },
+        "organization": {
+          "reference": "Organization/152"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RH0003X",
+                "display": "Hematology & Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0111",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "taylor.nguyen@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/155"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "156",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PractitionerRole: Medical Oncology Physician at Lakeshore Oncology and Hematology.</p></div>"
+        },
+        "practitioner": {
+          "reference": "Practitioner/154"
+        },
+        "organization": {
+          "reference": "Organization/152"
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "207RX0202X",
+                "display": "Medical Oncology Physician"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "312-555-0112",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "jordan.patel@lakeshore.example",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/156"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-07T17:28:33.000+00:00",
+          "source": "#VRrFeIna0JAaFHlu"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "287489008",
+              "display": "Percutaneous needle biopsy of liver (procedure)"
+            }
+          ],
+          "text": "Percutaneous needle biopsy of liver"
+        },
+        "subject": {
+          "reference": "Patient/2"
+        },
+        "performedPeriod": {
+          "start": "2025-10-20"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/5"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "71",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: prostatectomy related to prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "90470006",
+              "display": "Prostatectomy (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/57"
+        },
+        "encounter": {
+          "reference": "Encounter/59"
+        },
+        "performedDateTime": "2025-12-23T08:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/61"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/71"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "72",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-01-12T14:39:08.000+00:00",
+          "source": "#cK3IbJKcfcJyTaci",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: excision of breast related to breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1231734007",
+              "display": "Excision of breast (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/58"
+        },
+        "encounter": {
+          "reference": "Encounter/60"
+        },
+        "performedDateTime": "2025-11-11T14:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/62"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/72"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "121",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: prostatectomy related to prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "90470006",
+              "display": "Prostatectomy (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/107"
+        },
+        "encounter": {
+          "reference": "Encounter/109"
+        },
+        "performedDateTime": "2025-12-23T08:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/111"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/121"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "122",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T18:07:56.000+00:00",
+          "source": "#mCRP37NY7ltj2cfn",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: excision of breast related to breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1231734007",
+              "display": "Excision of breast (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/108"
+        },
+        "encounter": {
+          "reference": "Encounter/110"
+        },
+        "performedDateTime": "2025-11-11T14:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/112"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/122"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "171",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: prostatectomy related to prostate cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "90470006",
+              "display": "Prostatectomy (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/157"
+        },
+        "encounter": {
+          "reference": "Encounter/159"
+        },
+        "performedDateTime": "2025-12-23T08:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/161"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/171"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "172",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2026-03-03T21:58:14.000+00:00",
+          "source": "#67t2844hawOmaIAM",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: excision of breast related to breast cancer.</p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1231734007",
+              "display": "Excision of breast (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/158"
+        },
+        "encounter": {
+          "reference": "Encounter/160"
+        },
+        "performedDateTime": "2025-11-11T14:00:00-06:00",
+        "reasonReference": [
+          {
+            "reference": "Condition/162"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/172"
+      }
+    }
+  ]
+}
