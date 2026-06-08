@@ -292,5 +292,45 @@ walk(
     ))
   else . end
 )
+|
+
+# Fix 30: Remove empty arrays that result from null code removal
+walk(
+  if type == "object" then
+    with_entries(
+      if (.value | type) == "array" and (.value | length) == 0 and
+         (.key | IN("coding","identifier","telecom","performer","category",
+                    "interpretation","note","bodySite","method","specimen",
+                    "device","referenceRange","hasMember","derivedFrom",
+                    "component","modifier","programCode","subSite",
+                    "adjudication","detail","onAdmission")) then
+        empty
+      else . end)
+  else . end
+) |
+
+# Fix 31: Remove patient-birthTime with no value from Patient._birthDate.extension
+.entry |= map(
+  if .resource.resourceType == "Patient" and
+     (.resource._birthDate | type) == "object" and
+     (.resource._birthDate.extension | type) == "array" then
+    .resource._birthDate.extension |= map(select(
+      type != "object" or
+      (.url? | strings | contains("patient-birthTime") | not) or
+      (keys | map(select(. != "url")) | length > 0)
+    ))
+  else . end
+) |
+
+# Fix 32: obs-6 cleanup
+.entry |= map(
+  if .resource.resourceType == "Observation" and
+     .resource.dataAbsentReason != null and (
+       .resource.valueQuantity != null or .resource.valueCodeableConcept != null or
+       .resource.valueString != null or .resource.valueBoolean != null or
+       .resource.valueInteger != null) then
+    .resource |= del(.dataAbsentReason)
+  else . end
+)
 
 
