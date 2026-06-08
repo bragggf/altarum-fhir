@@ -8,6 +8,9 @@
 #
 # Verify:
 #   jq '.entry | length' test-data-helios-fixed.json   # should be 813
+
+# GBRAGG Note: this script will fail on helios data due to HAPI-0330: Object must have some content.
+# this is caused by a no values in an array (null ValueCodea). Claude says jq can't safely iterate over null values.
 # =============================================================================
 
 # Fix 1: Add absolute fullUrl to all entries
