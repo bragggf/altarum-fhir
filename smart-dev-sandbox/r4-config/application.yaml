@@ -194,6 +194,12 @@ hapi:
     #  - CONTEXT_EHR_PATIENT
     #  - CONTEXT_EHR_ENCOUNTER
     #oauth2_enabled: true
+    #
+    
+    # -------------------------------------------------------------------------------
+    # disable $everthing
+    # ------------------------------------------------------------------------------
+    everything_operational_provider_enabled: false
 
     # -------------------------------------------------------------------------------
     # A. Core Server & API
@@ -407,6 +413,8 @@ hapi:
     pre_expand_value_sets_default_count: 10000
     pre_expand_value_sets_max_count: 10000
     maximum_expansion_size: 10000
+    # Allow validation to use remote tx server for unknown ValueSets  
+    local_terminology_validation_urls_not_in_valueset: INFORMATION
     logical_urls:
       # - http://terminology.hl7.org/*  # removed: must be resolvable
       # - https://terminology.hl7.org/*  # removed: must be resolvable
@@ -453,6 +461,54 @@ hapi:
       - http://www.ama-assn.org/go/cpt
       - http://nucc.org/provider-taxonomy
       - http://terminology.hl7.org/CodeSystem/v2-0203
+      #adding followinig to prevent failure of helios bundle upload
+      - https://www.nubc.org/CodeSystem/RevenueCodes
+      - https://www.nubc.org/*
+      - https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+      - https://www.cms.gov/*
+      - http://terminology.hl7.org/CodeSystem/service-type
+      - http://terminology.hl7.org/CodeSystem/processpriority
+      # HL7 terminology wildcard (covers ~20 missing CodeSystems at once)
+      - http://terminology.hl7.org/CodeSystem/*
+      # Missing specific systems
+      - http://hl7.org/fhir/sid/cvx
+      - http://hl7.org/fhir/v2/*
+      - http://hl7.org/fhir/v3/*
+      - http://hl7.org/fhir/questionnaire-item-control
+      - http://hl7.org/fhir/policyholder-relationship
+      - http://hl7.org/fhir/us/cancer-reporting/*
+      - http://hl7.org/fhir/us/sdoh-clinicalcare/*
+      - http://id.who.int/icd/*
+      - http://smarthealthit.org/*
+      - http://cap.org/*
+      - https://cap.org/*
+      - https://fhir.cerner.com/*
+      - https://example.org/*
+      - https://clinicaltables.nlm.nih.gov/*
+      - urn:ietf:bcp:47
+      - urn:iso:std:iso:3166
+      # add explicit urls since wildcards are not working to load helios bundle
+      - http://terminology.hl7.org/CodeSystem/adjudication
+      - http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+      - http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+      - http://terminology.hl7.org/CodeSystem/claim-type
+      - http://terminology.hl7.org/CodeSystem/condition-clinical
+      - http://terminology.hl7.org/CodeSystem/condition-ver-status
+      - http://terminology.hl7.org/CodeSystem/discharge-disposition
+      - http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission
+      - http://terminology.hl7.org/CodeSystem/ex-paymenttype
+      - http://terminology.hl7.org/CodeSystem/occupation-cdc-census
+      - http://terminology.hl7.org/CodeSystem/organization-type
+      - http://terminology.hl7.org/CodeSystem/payeetype
+      - http://terminology.hl7.org/CodeSystem/subscriber-relationship
+      - http://terminology.hl7.org/CodeSystem/umls
+      - http://terminology.hl7.org/CodeSystem/v2-0074
+      - http://terminology.hl7.org/CodeSystem/v2-0078
+      - http://terminology.hl7.org/CodeSystem/v2-0131
+      - http://terminology.hl7.org/CodeSystem/v2-0443
+      - http://terminology.hl7.org/CodeSystem/v3-MaritalStatus
+      - http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+      - http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 
     # -------------------------------------------------------------------------------
     # J. Partitioning & Multitenancy
