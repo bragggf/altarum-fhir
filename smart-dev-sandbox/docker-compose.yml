@@ -162,12 +162,17 @@ services:
 
   smart-launcher: # ------------------------------------------------------------
     container_name: launcher
-    image: smartonfhir/smart-launcher:latest
+    #image: smartonfhir/smart-launcher:latest
+    # use updated smart launcher that is used at smart.argo.run 
+    image: smartonfhir/smart-launcher-2:latest
     environment:
       - HOST=${HOST}
+      - HOST=0.0.0.0 # required by new launcher to override .env HOST to bind on all interfaces
+      - PORT=4013 # required in new launcher.
       - NODE_ENV=production
-      - LAUNCHER_BASE_URL=http://${HOST}:${LAUNCHER_PORT}
-      - BASE_URL=http://${HOST}:${LAUNCHER_PORT}
+      #- LAUNCHER_BASE_URL=http://${HOST}:${LAUNCHER_PORT} # not used in launcher2
+      #- BASE_URL=http://${HOST}:${LAUNCHER_PORT}
+      - BASE_URL=http://localhost:${LAUNCHER_PORT} # need to bind to localhost for new launcher intead of ${HOST} variable
       - FHIR_SERVER_R2=http://${HOST}:${R2_PORT}/hapi-fhir-jpaserver/fhir
       - FHIR_SERVER_R3=http://${HOST}:${R3_PORT}/hapi-fhir-jpaserver/fhir
       # R4 served via nginx context path translation on R4_PORT
@@ -181,14 +186,15 @@ services:
       - PICKER_CONFIG_R2=r2-local
       - PICKER_CONFIG_R3=r3-local
       - PICKER_CONFIG_R4=r4-local
-      - PICKER_ORIGIN=http://${HOST}:${PATIENT_BROWSER_PORT}
-      - STU2_ENABLED=${R2_ENABLED}
-      - STU3_ENABLED=${R3_ENABLED}
+      #- PICKER_ORIGIN=http://${HOST}:${PATIENT_BROWSER_PORT}
+      #- STU2_ENABLED=${R2_ENABLED}
+      #- STU3_ENABLED=${R3_ENABLED}
       - STU4_ENABLED=${R4_ENABLED}
       # V2 spec requires PKCE.  
       - PKCE_ENABLED=1
     ports:
-      - "${LAUNCHER_PORT}:80"
+      #- "${LAUNCHER_PORT}:80" new launcher requires different setting
+      - "0.0.0.0:${LAUNCHER_PORT}:4013"
     networks:
       - r4net
     deploy:
