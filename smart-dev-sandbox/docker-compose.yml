@@ -185,6 +185,8 @@ services:
       - STU2_ENABLED=${R2_ENABLED}
       - STU3_ENABLED=${R3_ENABLED}
       - STU4_ENABLED=${R4_ENABLED}
+      # V2 spec requires PKCE.  
+      - PKCE_ENABLED=1
     ports:
       - "${LAUNCHER_PORT}:80"
     networks:
