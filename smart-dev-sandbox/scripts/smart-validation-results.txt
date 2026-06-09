@@ -1,0 +1,134 @@
+
+[1mTEST 1: FHIR Server Reachability[0m
+------------------------------------------------------------
+[0;32m[PASS][0m HAPI FHIR R4 direct endpoint reachable (HTTP 200)
+[0;32m[PASS][0m Launcher FHIR proxy reachable (HTTP 200)
+[0;32m[PASS][0m FHIR version R4 (4.0.1)
+
+[1mTEST 2: SMART Discovery (.well-known/smart-configuration)[0m
+------------------------------------------------------------
+[0;32m[PASS][0m /.well-known/smart-configuration endpoint exists
+[0;36m[INFO][0m authorization_endpoint : http://localhost:4013/v/r4/auth/authorize
+[0;36m[INFO][0m token_endpoint         : http://localhost:4013/v/r4/auth/token
+[0;32m[PASS][0m Required field present: authorization_endpoint
+[0;32m[PASS][0m Required field present: token_endpoint
+[0;32m[PASS][0m Required field present: capabilities
+[0;32m[PASS][0m Recommended field present: scopes_supported
+[0;32m[PASS][0m Recommended field present: response_types_supported
+[1;33m[WARN][0m Recommended field missing: issuer
+
+[1mTEST 3: CapabilityStatement SMART Security[0m
+------------------------------------------------------------
+[0;32m[PASS][0m CapabilityStatement.rest.security block present
+[0;32m[PASS][0m OAuth2/SMART security extension in CapabilityStatement
+
+[1mTEST 4 & 5: OAuth2 Endpoint Reachability[0m
+------------------------------------------------------------
+[0;32m[PASS][0m Authorization endpoint reachable (HTTP 400)
+[0;32m[PASS][0m Token endpoint reachable (HTTP 404)
+[0;32m[PASS][0m Token endpoint reachable and responding correctly (HTTP 400)
+
+[1mTEST 6: PKCE Support[0m
+------------------------------------------------------------
+[1;33m[WARN][0m PKCE S256 not explicitly declared (launcher supports it by default)
+[0;32m[PASS][0m PKCE code_verifier and code_challenge generated
+
+[1mTEST 7: Standalone Launch URL Construction[0m
+------------------------------------------------------------
+[0;32m[PASS][0m Standalone launch URL constructed
+
+  http://localhost:4013/v/r4/auth/authorize?response_type=code&client_id=test_client_connectathon&redirect_uri=http%3A//localhost%3A9999/callback&scope=launch/patient%20openid%20fhirUser%20patient/%2A.read&state=nNSRa3jQvwE49pFQ&aud=http%3A//localhost%3A4013/v/r4/fhir&code_challenge=nKVO0sgI6KX4WHMS0JYpZvOIlFKpAPmew32voBSIPJQ&code_challenge_method=S256
+
+
+[1mTEST 8: EHR Launch URL Construction[0m
+------------------------------------------------------------
+[0;36m[INFO][0m smart-dev-sandbox EHR launch via launcher UI:
+
+  http://localhost:4013  → EHR Launch tab
+  App Launch URL  : http://localhost:9999/launch.html
+  FHIR Server     : http://localhost:4013/v/r4/fhir
+
+[0;32m[PASS][0m EHR launch URL references constructed
+
+[1mTEST 9: SMART Scopes Declared[0m
+------------------------------------------------------------
+[0;32m[PASS][0m Scope declared: launch
+[0;32m[PASS][0m Scope declared: launch/patient
+[0;32m[PASS][0m Scope declared: openid
+[0;32m[PASS][0m Scope declared: fhirUser
+[1;33m[WARN][0m Scope not declared: patient/*.read (may still work)
+[1;33m[WARN][0m Scope not declared: user/*.read (may still work)
+[0;32m[PASS][0m Scope declared: offline_access
+
+[1mTEST 10: Required SMART Capabilities[0m
+------------------------------------------------------------
+[0;36m[INFO][0m Declared capabilities: launch-ehr launch-standalone client-public client-confidential-symmetric context-passthrough-banner context-passthrough-style context-ehr-patient context-ehr-encounter context-standalone-patient context-standalone-encounter permission-offline permission-patient permission-user
+[0;32m[PASS][0m Capability: launch-ehr
+[0;32m[PASS][0m Capability: launch-standalone
+[0;32m[PASS][0m Capability: client-public
+[1;33m[WARN][0m Capability not declared: sso-openid-connect
+[0;32m[PASS][0m Capability: context-ehr-patient
+[0;32m[PASS][0m Capability: context-standalone-patient
+[0;32m[PASS][0m Capability: permission-patient
+[0;32m[PASS][0m Capability: permission-user
+
+[1mTEST 11: FHIR Resource Availability[0m
+------------------------------------------------------------
+[0;32m[PASS][0m Patient search returns Bundle (3 patients)
+[0;36m[INFO][0m Sample patient ID: smart-9995679
+[1;33m[WARN][0m Observation: 0 resources (load test data if needed)
+[1;33m[WARN][0m Condition: 0 resources (load test data if needed)
+[0;32m[PASS][0m AllergyIntolerance: 1 resources available
+[1;33m[WARN][0m Encounter: 0 resources (load test data if needed)
+[1;33m[WARN][0m Procedure: 0 resources (load test data if needed)
+[1;33m[WARN][0m MedicationRequest: 0 resources (load test data if needed)
+[0;32m[PASS][0m DiagnosticReport: 9 resources available
+
+[1mTEST 12: Launcher Open FHIR Endpoint[0m
+------------------------------------------------------------
+[0;32m[PASS][0m Launcher open FHIR endpoint returns valid Bundle
+
+[1mTEST 13: Optional OAuth2 Endpoints[0m
+------------------------------------------------------------
+[0;32m[PASS][0m introspection_endpoint: http://localhost:4013/v/r4/auth/introspect
+[1;33m[WARN][0m revocation_endpoint: not declared (optional)
+[1;33m[WARN][0m registration_endpoint: not declared (optional)
+
+================================================================
+[1mVALIDATION SUMMARY[0m
+================================================================
+  [0;32mPASS[0m : 34
+  [1;33mWARN[0m : 12
+  [0;31mFAIL[0m : 0
+
+[1;33mReady with 12 warning(s) — review but likely non-blocking.[0m
+
+================================================================
+[1mMANUAL TEST CHECKLIST[0m
+================================================================
+
+1. STANDALONE LAUNCH (browser required)
+   a. Open : http://localhost:4013
+   b. Select 'Standalone Launch' tab
+   c. FHIR Server  : http://localhost:4013/v/r4/fhir
+   d. Scopes       : launch/patient openid fhirUser patient/*.read
+   e. Launch → select patient → verify redirect with ?code=
+
+2. EHR LAUNCH (browser required)
+   a. Open : http://localhost:4013
+   b. Select 'EHR Launch' tab
+   c. App Launch URL : http://your-app/launch.html
+   d. Select patient and provider → Launch
+   e. Verify app receives iss + launch params
+
+3. PATIENT BROWSER
+   Open: http://localhost:4009
+   Verify patient list loads from HAPI R4
+
+4. FHIR VIEWER
+   Open: http://localhost:4010
+   Search for a patient and verify resources display
+
+5. SMART CONFIGURATION
+   curl -s http://localhost:4013/v/r4/fhir/.well-known/smart-configuration | jq .
+
