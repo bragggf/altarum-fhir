@@ -1,19 +1,14 @@
 # =============================================================================
 # fix_helios_bundle_all.jq
-# Single-pass fix script for Helios FHIR R4 batch bundle
-# Applies all 26 data quality fixes from original test-data.json
+# Single-pass jq fix script for Helios FHIR R4 batch bundle (813 entries)
+# Apply FIRST before fix_helios_external_codesystems.jq
 #
 # Usage:
-#   jq -f fix_helios_bundle_all.jq test-data.json > test-data-helios-fixed.json
-#
-# Verify:
-#   jq '.entry | length' test-data-helios-fixed.json   # should be 813
-
-# GBRAGG Note: this script will fail on helios data due to HAPI-0330: Object must have some content.
-# this is caused by a no values in an array (null ValueCodea). Claude says jq can't safely iterate over null values.
+#   jq -f fix_helios_bundle_all.jq test-data.json > test-data-step1.json
+#   jq '.entry | length' test-data-step1.json   # should be 813
 # =============================================================================
 
-# Fix 1: Add absolute fullUrl to all entries
+# Fix 1: Add absolute fullUrl to all entries missing it
 .entry |= map(
   if has("fullUrl") then .
   elif (.resource.id != null) then
@@ -76,7 +71,7 @@ walk(
   else . end
 ) |
 
-# Fix 7: Remove patient-birthTime extensions with null valueDateTime
+# Fix 7: Remove patient-birthTime extensions with no value from resource.extension
 .entry |= map(
   if .resource != null and (.resource.extension | type) == "array" then
     .resource.extension |= map(select(
@@ -111,7 +106,7 @@ walk(
   else . end
 ) |
 
-# Fix 10: Null literal codes
+# Fix 10: Null literal string codes
 walk(
   if type == "object" and (.code? | type) == "string" and .code == "null" then
     .system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" |
@@ -127,7 +122,7 @@ walk(
   else . end
 ) |
 
-# Fix 12: Remove all LOINC and SNOMED display names
+# Fix 12: Remove LOINC and SNOMED display names
 walk(
   if type == "object" and .display? != null then
     if .system? == "http://loinc.org" or .system? == "http://snomed.info/sct" then
@@ -139,7 +134,7 @@ walk(
 # Fix 13: J1100 trailing space
 walk(if type == "string" and . == "J1100 " then "J1100" else . end) |
 
-# Fix 14: issued date-only (DiagnosticReport and Observation only)
+# Fix 14: Date-only issued on DiagnosticReport and Observation only
 .entry |= map(
   if .resource.resourceType == "DiagnosticReport" or
      .resource.resourceType == "Observation" then
@@ -156,7 +151,7 @@ walk(if type == "string" and contains("Posiive") then gsub("Posiive"; "Positive"
 # Fix 16: JMC system not a valid URI
 walk(if type == "object" and .system? == "JMC system" then .system = "urn:local:JMC-system" else . end) |
 
-# Fix 17: us-core-race/ethnicity wrong value type - convert to sub-extensions
+# Fix 17: us-core-race/ethnicity valueCodeableConcept to sub-extensions
 .entry |= map(
   if .resource.resourceType == "Patient" then
     .resource.extension |= (
@@ -199,12 +194,11 @@ walk(
   else . end
 ) |
 
-# Fix 21: Unknown LOINC codes (7+ digit numeric - not valid LOINC)
+# Fix 21: Unknown LOINC codes (7+ digit numeric)
 walk(
   if type == "object" and .system? == "http://loinc.org" and
      (.code? | strings | test("^[0-9]{7,}$")) then
-    .system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" |
-    .code = "unknown"
+    .system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" | .code = "unknown"
   else . end
 ) |
 
@@ -212,12 +206,18 @@ walk(
 walk(
   if type == "object" and .system? == "http://snomed.info/sct" and
      (.code? | IN("36929009", "72300004", "433466002")) then
-    .system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" |
-    .code = "unknown"
+    .system = "http://terminology.hl7.org/CodeSystem/data-absent-reason" | .code = "unknown"
   else . end
 ) |
 
-# Fix 23: Identifier.system not absolute URI
+# Fix 23: snomed.info missing /sct suffix
+walk(
+  if type == "object" and .system? == "http://snomed.info" then
+    .system = "http://snomed.info/sct"
+  else . end
+) |
+
+# Fix 24: Identifier.system not absolute URI
 walk(
   if type == "object" and has("system") and has("value") and
      .system != null and (.system | type) == "string" and
@@ -228,7 +228,7 @@ walk(
   else . end
 ) |
 
-# Fix 24: Remove unverifiable profiles
+# Fix 25: Remove unverifiable profiles
 .entry |= map(
   if (.resource.meta.profile | type) == "array" then
     .resource.meta.profile |= map(
@@ -241,7 +241,7 @@ walk(
   else . end
 ) |
 
-# Fix 25: Add narrative to resources missing it
+# Fix 26: Add narrative to resources missing it
 .entry |= map(
   if .resource != null and (.resource | has("resourceType")) and
      (.resource.text == null or .resource.text.div == null) then
@@ -251,16 +251,6 @@ walk(
     }
   else . end
 ) |
-
-# Fix 26: Remove null issued and null extension fields (must be last)
-# placed after all other fixes since some fixes can introduce null fields
-walk(
-  if type == "object" then
-    (if has("issued") and .issued == null then del(.issued) else . end) |
-    (if has("extension") and .extension == null then del(.extension) else . end)
-  else . end
-)
-|
 
 # Fix 27: Claim.priority coding missing system
 .entry |= map(
@@ -285,19 +275,20 @@ walk(
   else . end
 ) |
 
-# Fix 29: Remove patient-birthTime extensions with no value field at all
+# Fix 29: Remove patient-birthTime with no value from Patient._birthDate.extension
 .entry |= map(
-  if .resource != null and (.resource.extension | type) == "array" then
-    .resource.extension |= map(select(
+  if .resource.resourceType == "Patient" and
+     (.resource._birthDate | type) == "object" and
+     (.resource._birthDate.extension | type) == "array" then
+    .resource._birthDate.extension |= map(select(
       type != "object" or
       (.url? | strings | contains("patient-birthTime") | not) or
       (keys | map(select(. != "url")) | length > 0)
     ))
   else . end
-)
-|
+) |
 
-# Fix 30: Remove empty arrays that result from null code removal
+# Fix 30: Remove empty arrays from known fields
 walk(
   if type == "object" then
     with_entries(
@@ -312,28 +303,29 @@ walk(
   else . end
 ) |
 
-# Fix 31: Remove patient-birthTime with no value from Patient._birthDate.extension
+# Fix 31: Remove empty meta.profile arrays
 .entry |= map(
-  if .resource.resourceType == "Patient" and
-     (.resource._birthDate | type) == "object" and
-     (.resource._birthDate.extension | type) == "array" then
-    .resource._birthDate.extension |= map(select(
-      type != "object" or
-      (.url? | strings | contains("patient-birthTime") | not) or
-      (keys | map(select(. != "url")) | length > 0)
-    ))
+  if (.resource.meta.profile | type) == "array" and
+     (.resource.meta.profile | length) == 0 then
+    .resource.meta |= del(.profile)
   else . end
 ) |
 
-# Fix 32: obs-6 cleanup
-.entry |= map(
-  if .resource.resourceType == "Observation" and
-     .resource.dataAbsentReason != null and (
-       .resource.valueQuantity != null or .resource.valueCodeableConcept != null or
-       .resource.valueString != null or .resource.valueBoolean != null or
-       .resource.valueInteger != null) then
-    .resource |= del(.dataAbsentReason)
+# Fix 32: Remap old HL7 v3/v2 namespace URLs to terminology.hl7.org
+walk(
+  if type == "object" and (.system | type) == "string" then
+    if .system == "http://hl7.org/fhir/v3/ActCode" then
+      .system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+    elif .system == "http://hl7.org/fhir/v2/0131" then
+      .system = "http://terminology.hl7.org/CodeSystem/v2-0131"
+    else . end
+  else . end
+) |
+
+# Fix 33: Delete null issued and null extension fields (MUST BE LAST)
+walk(
+  if type == "object" then
+    (if has("issued") and .issued == null then del(.issued) else . end) |
+    (if has("extension") and .extension == null then del(.extension) else . end)
   else . end
 )
-
-
