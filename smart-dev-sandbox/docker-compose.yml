@@ -169,10 +169,12 @@ services:
       - HOST=${HOST}
       - HOST=0.0.0.0 # required by new launcher to override .env HOST to bind on all interfaces
       - PORT=4013 # required in new launcher.
-      - NODE_ENV=production
+      - NODE_ENV=development
+      - DEBUG_MODE=*   # enable all debug output
       #- LAUNCHER_BASE_URL=http://${HOST}:${LAUNCHER_PORT} # not used in launcher2
       #- BASE_URL=http://${HOST}:${LAUNCHER_PORT}
-      - BASE_URL=http://localhost:${LAUNCHER_PORT} # need to bind to localhost for new launcher intead of ${HOST} variable
+      # - BASE_URL=http://localhost:${LAUNCHER_PORT} # need to bind to localhost for new launcher intead of ${HOST} variable
+      - BASE_URL=http://${HOST}:${LAUNCHER_PORT}  # external hostname from .env for URL construction
       - FHIR_SERVER_R2=http://${HOST}:${R2_PORT}/hapi-fhir-jpaserver/fhir
       - FHIR_SERVER_R3=http://${HOST}:${R3_PORT}/hapi-fhir-jpaserver/fhir
       # R4 served via nginx context path translation on R4_PORT
