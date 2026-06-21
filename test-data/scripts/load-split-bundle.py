@@ -1,10 +1,10 @@
 # Split into 200-entry batch chunks
-python3 split-bundle.py temp-data.json ./chunks/ 200
+#python3 split-bundle.py temp-data.json ./chunks/ 200
 
 # Then load each chunk
 FHIR_BASE=$1
 
-for chunk in ./chunks/chunk_*.json; do
+for chunk in ./split_bundles/chunk_*.json; do
     echo "Loading $chunk..."
     HTTP_STATUS=$(curl -s -o /tmp/response.json -w "%{http_code}" \
         -X POST "$FHIR_BASE" \
