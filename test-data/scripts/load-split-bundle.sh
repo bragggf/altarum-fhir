@@ -1,8 +1,16 @@
 # Split into 200-entry batch chunks
 #python3 split-bundle.py temp-data.json ./chunks/ 200
 
+
+# Check if fewer than 3 arguments were provided
+if [[ "$#" -lt 1 ]]; then
+    echo "Usage: $0 [HAPI FHIR BASE URL]" >&2
+    exit 1
+fi
+
 # Then load each chunk
 FHIR_BASE=$1
+
 
 for chunk in ./split_bundles/chunk_*.json; do
     echo "Loading $chunk..."
