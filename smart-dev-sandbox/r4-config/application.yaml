@@ -652,7 +652,7 @@ hapi:
     tester:
       home:
         name: Local Tester
-        server_address: 'http://localhost:4004/fhir'
+        server_address: 'https://4004.fhirconnect.altarum.org/hapi-fhir-jpaserver/fhir
         refuse_to_fetch_third_party_urls: false
         fhir_version: R4
 
